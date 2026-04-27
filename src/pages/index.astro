@@ -3,16 +3,130 @@ import { Image } from "astro:assets"
 import wouterImage from "../../assets/wouter.jpg"
 ---
 
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Dr. Wouter</title>
+		<meta name="description" content="Dr Wouter's" />
+		<title>Dr. Wouter's</title>
 	</head>
-	<Image
-		src={wouterImage}
-		alt="Picture of Wouter"
-	/>
-	<a href="https://wouterlueks.nl/">Here's Wouter's actual page :P</a>
+	<body>
+		<main>
+			<header>
+				<Image class="logo" src={wouterImage} alt="Dr. Wouter Lueks" />
+				<div>
+					<h1>Dr. Wouter's</h1>
+					<a href="https://wouterlueks.nl/">Here's Dr. Wouter Lueks' actual page :P</a>
+				</div>
+			</header>
+
+			<hr />
+
+			<section aria-labelledby="menu-title">
+				<h2 id="menu-title">Menu</h2>
+				<p><a href="/menu.pdf">Open menu.pdf</a></p>
+
+				<object class="menu" data="/menu.pdf" type="application/pdf">
+					<p>
+						The menu PDF cannot be shown here.
+						<a href="/menu.pdf">Open menu.pdf</a>.
+					</p>
+				</object>
+			</section>
+
+			<hr />
+
+			<footer>
+				<p>Dr. Wouter's Lab (Food)</p>
+			</footer>
+		</main>
+	</body>
 </html>
+
+<style>
+	body {
+		margin: 0;
+		background: white;
+		color: black;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 18px;
+	}
+
+	main {
+		width: min(900px, calc(100% - 24px));
+		margin: 18px auto;
+	}
+
+	header {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+	}
+
+	.logo {
+		width: 110px;
+		height: 110px;
+		border: 1px solid black;
+		object-fit: cover;
+	}
+
+	h1 {
+		margin: 0;
+		font-size: 42px;
+		font-weight: bold;
+	}
+
+	.tagline {
+		margin: 6px 0 0;
+	}
+
+	h2 {
+		font-size: 28px;
+	}
+
+	hr {
+		margin: 18px 0;
+		border: 0;
+		border-top: 1px solid black;
+	}
+
+	a {
+		color: blue;
+	}
+
+	a:visited {
+		color: purple;
+	}
+
+	.menu {
+		display: block;
+		width: 100%;
+		height: 760px;
+		border: 1px solid black;
+		background: white;
+	}
+
+	footer p {
+		margin: 0 0 6px;
+	}
+
+	@media (max-width: 560px) {
+		header {
+			display: block;
+		}
+
+		.logo {
+			margin-bottom: 12px;
+		}
+
+		h1 {
+			font-size: 34px;
+		}
+
+		.menu {
+			height: 560px;
+		}
+	}
+</style>
