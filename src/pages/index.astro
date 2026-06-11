@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets"
 import wouterImage from "../../assets/wouter.jpg"
 ---
 
@@ -15,7 +14,7 @@ import wouterImage from "../../assets/wouter.jpg"
 	<body>
 		<main>
 			<header>
-				<Image class="logo" src={wouterImage} alt="Dr. Wouter Lueks" />
+				<img class="logo" src={wouterImage.src} alt="Dr. Wouter Lueks" />
 				<div>
 					<h1>Dr. Wouter's</h1>
 					<a href="https://wouterlueks.nl/">Here's Dr. Wouter Lueks' actual page :P</a>
